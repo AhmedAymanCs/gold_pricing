@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gold_pricing/core/constant/color_manager.dart';
 import 'package:gold_pricing/core/presentation/shared_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,6 +7,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Column(children: [CustomAppBar()]));
+    return Scaffold(
+      backgroundColor: ColorManager.backgroundColor,
+      body: Column(children: [CustomAppBar()]),
+    );
   }
 }

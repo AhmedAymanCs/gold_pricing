@@ -11,8 +11,17 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.h),
-      decoration: BoxDecoration(color: ColorManager.appBarColor),
+      padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: ColorManager.appBarColor,
+        boxShadow: [
+          BoxShadow(
+            color: ColorManager.customGrey.withOpacity(0.1),
+            blurRadius: 4.0,
+            offset: Offset(0.0, 2.0),
+          ),
+        ],
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -21,7 +30,7 @@ class CustomAppBar extends StatelessWidget {
             StringManager.appName,
             style: TextStyle(
               fontSize: FontSize.s22,
-              fontWeight: FontWeightManager.bold,
+              fontWeight: FontWeightManager.semiBold,
               color: ColorManager.primaryTextColor,
             ),
           ),
