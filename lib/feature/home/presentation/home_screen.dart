@@ -24,14 +24,24 @@ class HomeScreen extends StatelessWidget {
             stops: [0.0, 0.5, 1.0],
           ),
         ),
-        child: Column(
-          children: [
-            const CustomAppBar(),
-            SizedBox(height: 20.h),
-            const Header(isGold: true),
-            SizedBox(height: MediaQuery.of(context).size.height / 5),
-            const Header(isGold: false),
-          ],
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: Column(
+                  children: [
+                    const CustomAppBar(),
+                    SizedBox(height: 20.h),
+                    const Header(isGold: true),
+                    SizedBox(height: MediaQuery.of(context).size.height / 5),
+                    const Header(isGold: false),
+                  ],
+                ),
+              ),
+            );
+          },
         ),
       ),
     );
