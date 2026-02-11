@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gold_pricing/core/presentation/home_screen.dart';
+import 'package:gold_pricing/feature/home/presentation/home_screen.dart';
 import 'package:gold_pricing/core/routing/routes.dart';
 
 class AppRouter {
