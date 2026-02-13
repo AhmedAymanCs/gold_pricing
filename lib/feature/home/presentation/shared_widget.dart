@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gold_pricing/core/constant/color_manager.dart';
 import 'package:gold_pricing/core/constant/font_manager.dart';
@@ -6,7 +7,8 @@ import 'package:gold_pricing/core/constant/string_manager.dart';
 import 'package:gold_pricing/core/widgets/custom_button.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  final VoidCallback? onPressed;
+  const CustomAppBar({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -23,26 +25,32 @@ class CustomAppBar extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
         children: [
-          const SizedBox(height: 50),
-          Text(
-            StringManager.appName,
-            style: TextStyle(
-              fontSize: FontSize.s22,
-              fontWeight: FontWeightManager.semiBold,
-              color: ColorManager.primaryTextColor,
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 50),
+              Text(
+                StringManager.appName,
+                style: TextStyle(
+                  fontSize: FontSize.s22,
+                  fontWeight: FontWeightManager.semiBold,
+                  color: ColorManager.primaryTextColor,
+                ),
+              ),
+              Text(
+                StringManager.appBarSubTitle,
+                style: TextStyle(
+                  fontSize: FontSize.s16,
+                  fontWeight: FontWeightManager.light,
+                  color: ColorManager.secondaryTextColor,
+                ),
+              ),
+            ],
           ),
-          Text(
-            StringManager.appBarSubTitle,
-            style: TextStyle(
-              fontSize: FontSize.s16,
-              fontWeight: FontWeightManager.light,
-              color: ColorManager.secondaryTextColor,
-            ),
-          ),
+          Spacer(),
+          IconButton(icon: Icon(Icons.refresh_sharp), onPressed: onPressed),
         ],
       ),
     );

@@ -33,7 +33,11 @@ class HomeScreen extends StatelessWidget {
                   constraints: BoxConstraints(minHeight: constraints.maxHeight),
                   child: Column(
                     children: [
-                      const CustomAppBar(),
+                      CustomAppBar(
+                        onPressed: () {
+                          AppCubit.get(context).getAllData();
+                        },
+                      ),
                       SizedBox(height: 20.h),
                       BlocBuilder<AppCubit, AppStates>(
                         buildWhen: (previous, current) {
