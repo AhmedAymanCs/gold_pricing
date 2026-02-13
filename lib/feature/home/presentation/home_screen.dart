@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gold_pricing/core/constant/color_manager.dart';
 import 'package:gold_pricing/feature/home/presentation/shared_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,11 +15,7 @@ class HomeScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFFFFF9E7), // درجة Creamy صفراء فاتحة جداً
-              Color(0xFFFEFDF9), // درجة انتقالية (Off-white)
-              Colors.white,
-            ],
+            colors: [Color(0xFFFFF9E7), Color(0xFFFEFDF9), Colors.white],
             stops: [0.0, 0.5, 1.0],
           ),
         ),

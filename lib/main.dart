@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gold_pricing/core/di/service_locator.dart';
 import 'package:gold_pricing/core/routing/app_router.dart';
 import 'package:gold_pricing/core/routing/routes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  dioSetupServiceLocator();
   runApp(const MyApp());
 }
 
