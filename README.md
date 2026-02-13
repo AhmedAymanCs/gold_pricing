@@ -2,6 +2,16 @@
 
 A modern, responsive mobile application built with **Flutter** to track real-time **Gold and Silver prices**. This project was developed as part of a workshop focused on mastering the **MVVM architecture** and **State Management**.
 
+<div align="center">
+
+## 🚀 [**Click Here to Try Live Demo**](https://gold-pricing-mvvm.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/DEMO-ONLINE-green?style=for-the-badge&logo=netlify&logoColor=white)](https://gold-pricing-mvvm.netlify.app/)
+
+</div>
+
+> ** Click the button above to test the app with fake static data directly in your browser!**
+
+---
 ---
 
 ## ✨ Features

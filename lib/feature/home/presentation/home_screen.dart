@@ -105,13 +105,17 @@ class HomeScreen extends StatelessWidget {
                               },
                             );
                           } else if (state is GetSilverPriceError) {
-                            return Text('Error: ${state.error}');
-                          }
-                          if (state is GetDataLoadingState ||
-                              state is GetSilverPriceLoadingState) {
+                            return Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Error: Maybe no internet connection \n \nError Syntax:${state.error}',
+                                ),
+                              ),
+                            );
+                          } else {
                             return const HeaderShimmerSkeleton(isGold: false);
                           }
-                          return const SizedBox();
                         },
                       ),
                     ],
