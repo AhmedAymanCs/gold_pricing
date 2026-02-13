@@ -14,6 +14,7 @@ void dioSetupServiceLocator() {
         receiveTimeout: const Duration(seconds: 20),
         connectTimeout: const Duration(seconds: 20),
         receiveDataWhenStatusError: true,
+        headers: {"Accept": "application/json", "User-Agent": "Mozilla/5.0 "},
       ),
     ),
   );

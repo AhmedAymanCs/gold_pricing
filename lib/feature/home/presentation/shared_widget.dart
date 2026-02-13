@@ -51,7 +51,8 @@ class CustomAppBar extends StatelessWidget {
 
 class Header extends StatelessWidget {
   final bool isGold;
-  const Header({super.key, required this.isGold});
+  final String text;
+  const Header({super.key, required this.isGold, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -113,9 +114,7 @@ class Header extends StatelessWidget {
                 textBaseline: TextBaseline.alphabetic,
                 children: [
                   Text(
-                    isGold
-                        ? StringManager.goldPrice
-                        : StringManager.silverPrice,
+                    text,
                     style: TextStyle(
                       fontSize: FontSize.s28,
                       fontWeight: FontWeightManager.bold,

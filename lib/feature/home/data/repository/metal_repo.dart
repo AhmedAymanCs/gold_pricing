@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:gold_pricing/core/di/service_locator.dart';
 import 'package:gold_pricing/core/networking/api_constants.dart';
-import 'package:gold_pricing/core/networking/dio_helper.dart';
 import 'package:gold_pricing/feature/home/data/models/item_model.dart';
 
 class MetalRepo {

@@ -5,6 +5,4 @@ class StringManager {
   static const String silverPrices = 'Silver Prices';
   static const String perOnce = 'Per Ounce';
   static const String usd = 'USD';
-  static const String goldPrice = '3322.5';
-  static const String silverPrice = '1250.5';
 }
