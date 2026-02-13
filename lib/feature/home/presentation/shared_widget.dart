@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gold_pricing/core/constant/color_manager.dart';
 import 'package:gold_pricing/core/constant/font_manager.dart';
 import 'package:gold_pricing/core/constant/string_manager.dart';
 import 'package:gold_pricing/core/widgets/custom_button.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CustomAppBar extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -160,6 +160,97 @@ class Header extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class HeaderShimmerSkeleton extends StatelessWidget {
+  final bool isGold;
+  const HeaderShimmerSkeleton({super.key, required this.isGold});
+
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer.fromColors(
+      baseColor: isGold
+          ? ColorManager.goldBorder.withOpacity(0.5)
+          : ColorManager.silverBorder,
+      highlightColor: isGold
+          ? ColorManager.goldGradient[0]
+          : ColorManager.silverGradient[0],
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              SizedBox(width: 15.w),
+              Container(
+                width: 4,
+                height: 30,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              SizedBox(width: 8.w),
+              Container(
+                width: 100.w,
+                height: 20.h,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+              ),
+              const Spacer(),
+              Padding(
+                padding: EdgeInsets.only(right: 16.w),
+                child: Container(
+                  width: 60.w,
+                  height: 30.h,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            height: 105.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.white, width: 1),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 140.w,
+                  height: 32.h,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                ),
+                SizedBox(height: 10.h),
+                Container(
+                  width: 70.w,
+                  height: 14.h,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

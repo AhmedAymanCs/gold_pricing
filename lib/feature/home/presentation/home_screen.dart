@@ -64,9 +64,16 @@ class HomeScreen extends StatelessWidget {
                               },
                             );
                           } else if (state is GetGoldPriceError) {
-                            return Text('Error: ${state.error}');
+                            return Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Error: Maybe no internet connection \n \nError Syntax:${state.error}',
+                                ),
+                              ),
+                            );
                           } else {
-                            return const CircularProgressIndicator();
+                            return const HeaderShimmerSkeleton(isGold: true);
                           }
                         },
                       ),
@@ -102,9 +109,7 @@ class HomeScreen extends StatelessWidget {
                           }
                           if (state is GetDataLoadingState ||
                               state is GetSilverPriceLoadingState) {
-                            return const Center(
-                              child: CircularProgressIndicator(),
-                            );
+                            return const HeaderShimmerSkeleton(isGold: false);
                           }
                           return const SizedBox();
                         },
