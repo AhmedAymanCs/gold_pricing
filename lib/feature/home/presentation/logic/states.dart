@@ -6,6 +6,15 @@ class AppInitialState extends AppStates {}
 
 class GetDataLoadingState extends AppStates {}
 
+class GetAllDataSuccess extends AppStates {
+  final MetalModel gold;
+  final MetalModel silver;
+
+  GetAllDataSuccess(this.gold, this.silver);
+}
+
+class GetGoldPriceLoadingState extends AppStates {}
+
 class GetGoldPriceSuccess extends AppStates {
   final MetalModel gold;
 
@@ -17,6 +26,8 @@ class GetGoldPriceError extends AppStates {
 
   GetGoldPriceError(this.error);
 }
+
+class GetSilverPriceLoadingState extends AppStates {}
 
 class GetSilverPriceSuccess extends AppStates {
   final MetalModel silver;

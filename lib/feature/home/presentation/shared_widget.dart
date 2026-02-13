@@ -52,7 +52,13 @@ class CustomAppBar extends StatelessWidget {
 class Header extends StatelessWidget {
   final bool isGold;
   final String text;
-  const Header({super.key, required this.isGold, required this.text});
+  final VoidCallback onPressed;
+  const Header({
+    super.key,
+    required this.isGold,
+    required this.text,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -84,6 +90,7 @@ class Header extends StatelessWidget {
             Spacer(),
             CustomButton(
               color: isGold ? ColorManager.goldBadge : ColorManager.silverBadge,
+              onPressed: onPressed,
             ),
           ],
         ),
